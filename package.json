@@ -18,6 +18,12 @@
   "bugs": {
     "url": "https://github.com/kimamula/ts-transformer-keys/issues"
   },
+  "files": [
+    "index.js",
+    "index.ts",
+    "transformer.js",
+    "transformer.ts"
+  ],
   "homepage": "https://github.com/kimamula/ts-transformer-keys#readme",
   "devDependencies": {
     "@types/mocha": "^2.2.41",
