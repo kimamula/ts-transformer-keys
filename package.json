@@ -1,0 +1,32 @@
+{
+  "name": "ts-contextual-isequal",
+  "version": "0.1.0",
+  "description": "Check equality of objects based on their contextual type in TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimamula/ts-contextual-isequal.git"
+  },
+  "keywords": [
+    "TypeScript"
+  ],
+  "author": "kimamula",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kimamula/ts-contextual-isequal/issues"
+  },
+  "homepage": "https://github.com/kimamula/ts-contextual-isequal#readme",
+  "devDependencies": {
+    "@types/lodash.isequal": "^4.5.1",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^7.0.13",
+    "mocha": "^3.2.0",
+    "typescript": "^2.3.0-dev.20170422"
+  },
+  "dependencies": {
+    "lodash.isequal": "^4.5.0"
+  }
+}
