@@ -1,0 +1,37 @@
+{
+  "name": "ts-transformer-keys",
+  "version": "0.1.0",
+  "description": "Check equality of objects based on their contextual type in TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc && node ./test/compileMain.js && mocha ./test/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimamula/ts-transformer-keys.git"
+  },
+  "keywords": [
+    "TypeScript"
+  ],
+  "author": "kimamula",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kimamula/ts-transformer-keys/issues"
+  },
+  "files": [
+    "index.js",
+    "index.ts",
+    "transformer.js",
+    "transformer.ts"
+  ],
+  "homepage": "https://github.com/kimamula/ts-transformer-keys#readme",
+  "devDependencies": {
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^7.0.13",
+    "mocha": "^3.2.0",
+    "typescript": "^2.3.0-dev.20170422"
+  },
+  "peerDependencies": {
+    "typescript": "^2.3.0-dev"
+  }
+}
