@@ -1,2 +1,2 @@
-# ts-contextual-isequal
-Check equality of objects based on their contextual type in TypeScript
+# ts-transformer-keys
+A TypeScript custom transformer which enables to obtain keys of given type.
