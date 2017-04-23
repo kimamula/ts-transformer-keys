@@ -15,3 +15,9 @@ const fooBarBazKeys = keys<FooBarBaz>();
 fooBarBazKeys.forEach(key => console.log(key));
 
 keys.toString();
+
+class MyClass<T extends object> {
+  keys() {
+    return keys<T>();
+  }
+}

@@ -69,6 +69,15 @@ console.log(keysOfProps); // ['id', 'name', 'age']
 * TypeScript 2.3.0-dev currently has a bug in transformation API, which prevents this package to work correctly in some cases.
   * https://github.com/Microsoft/TypeScript/issues/15192
 * The `keys` function can only be used as a call expression. Writing something like `keys.toString()` results in a runtime error.
+* `keys` does not work with a dynamic type parameter, i.e., `keys<T>()` in the following code is converted to an empty array(`[]`).
+
+```ts
+class MyClass<T extends object> {
+  keys() {
+    return keys<T>();
+  }
+}
+```
 
 # License
 

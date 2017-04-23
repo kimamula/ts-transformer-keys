@@ -20,3 +20,9 @@ function keys() {
 const a = keys();
 
 k.toString();
+
+class MyClass<T extends object> {
+  keys() {
+    return k<T>();
+  }
+}
