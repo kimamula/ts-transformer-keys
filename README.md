@@ -6,7 +6,7 @@ A TypeScript custom transformer which enables to obtain keys of given type.
 [![Downloads](https://img.shields.io/npm/dm/ts-transformer-keys.svg)](https://www.npmjs.com/package/ts-transformer-keys)
 
 # Requirement
-TypeScript >= 2.3.0
+TypeScript >= 2.3.1
 
 # How to use this package
 
@@ -66,8 +66,6 @@ console.log(keysOfProps); // ['id', 'name', 'age']
 
 # Note
 
-* TypeScript 2.3.0-dev currently has a bug in transformation API, which prevents this package to work correctly in some cases.
-  * https://github.com/Microsoft/TypeScript/issues/15192
 * The `keys` function can only be used as a call expression. Writing something like `keys.toString()` results in a runtime error.
 * `keys` does not work with a dynamic type parameter, i.e., `keys<T>()` in the following code is converted to an empty array(`[]`).
 

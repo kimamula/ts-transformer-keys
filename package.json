@@ -1,6 +1,6 @@
 {
   "name": "ts-transformer-keys",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Check equality of objects based on their contextual type in TypeScript",
   "main": "index.js",
   "scripts": {
@@ -29,9 +29,9 @@
     "@types/mocha": "^2.2.41",
     "@types/node": "^7.0.13",
     "mocha": "^3.2.0",
-    "typescript": "^2.3.0-dev.20170422"
+    "typescript": "^2.3.1"
   },
   "peerDependencies": {
-    "typescript": "^2.3.0-dev"
+    "typescript": "^2.3.1"
   }
 }
