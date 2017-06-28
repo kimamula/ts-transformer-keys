@@ -29,7 +29,11 @@ function isKeysCallExpression(node: ts.Node, typeChecker: ts.TypeChecker): node 
   if (node.kind !== ts.SyntaxKind.CallExpression) {
     return false;
   }
-  const { declaration } = typeChecker.getResolvedSignature(node as ts.CallExpression);
+  const signature = typeChecker.getResolvedSignature(node as ts.CallExpression);
+  if (typeof signature === 'undefined') {
+    return false;
+  }
+  const { declaration } = signature;
   return !!declaration
     && (declaration.getSourceFile().fileName === indexTs)
     && !!declaration.name
