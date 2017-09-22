@@ -8,7 +8,7 @@ console.log(fooKeys[0]);
 var fooBarBazKeys = ["bar"];
 fooBarBazKeys.forEach(function (key) { return console.log(key); });
 index_1.keys.toString();
-var MyClass = (function () {
+var MyClass = /** @class */ (function () {
     function MyClass() {
     }
     MyClass.prototype.keys = function () {

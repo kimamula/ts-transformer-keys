@@ -12,7 +12,7 @@ function keys() {
 }
 var a = keys();
 index_1.keys.toString();
-var MyClass = (function () {
+var MyClass = /** @class */ (function () {
     function MyClass() {
     }
     MyClass.prototype.keys = function () {
