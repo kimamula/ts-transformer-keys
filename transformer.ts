@@ -35,7 +35,7 @@ function isKeysCallExpression(node: ts.Node, typeChecker: ts.TypeChecker): node 
   }
   const { declaration } = signature;
   return !!declaration
-    && (declaration.getSourceFile().fileName === indexTs)
+    && (path.join(declaration.getSourceFile().fileName) === indexTs)
     && !!declaration.name
     && (declaration.name.getText() === 'keys');
 }
