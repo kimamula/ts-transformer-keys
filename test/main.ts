@@ -31,8 +31,8 @@ describe('keys', () => {
     it(`transforms ${file} as expected`, () => {
       let result = '';
       const fullFileName = path.join(fileTransformationDir, file), postCompileFullFileName = fullFileName.replace(/\.ts$/, '.js');
-      compile([fullFileName], (fileName, data) => postCompileFullFileName === fileName && (result = data));
-      assert.strictEqual(result, fs.readFileSync(postCompileFullFileName, 'utf-8'));
+      compile([fullFileName], (fileName, data) => postCompileFullFileName === path.join(fileName) && (result = data));
+      assert.strictEqual(result.replace(/\r\n/g, '\n'), fs.readFileSync(postCompileFullFileName, 'utf-8'));
     }).timeout(0)
   );
 });
