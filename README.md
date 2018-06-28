@@ -35,7 +35,7 @@ The followings are the example usage of the custom transformer.
 
 ### webpack (with awesome-typescript-loader)
 
-See [examples/webpack](ts-transformer-keys/tree/master/examples/webpack) for detail.
+See [examples/webpack](examples/webpack) for detail.
 
 ```js
 // webpack.config.js
@@ -64,7 +64,7 @@ module.exports = {
 
 ## Rollup (with rollup-plugin-typescript2)
 
-See [examples/rollup](ts-transformer-keys/tree/master/examples/rollup) for detail.
+See [examples/rollup](examples/rollup) for detail.
 
 ```js
 // rollup.config.js
@@ -85,7 +85,7 @@ export default {
 
 ## ttypescript
 
-See [examples/ttypescript](ts-transformer-keys/tree/master/examples/ttypescript) for detail.
+See [examples/ttypescript](examples/ttypescript) for detail.
 See [ttypescript's README](https://github.com/cevek/ttypescript/blob/master/README.md) for how to use this with module bundlers such as webpack of Rollup.
 
 ```json
@@ -103,7 +103,7 @@ See [ttypescript's README](https://github.com/cevek/ttypescript/blob/master/READ
 
 ## TypeScript API
 
-See [test](ts-transformer-keys/tree/master/test) for detail.
+See [test](test) for detail.
 You can try it with `$ npm test`.
 
 ```js
@@ -127,7 +127,7 @@ if (emitSkipped) {
 }
 ```
 
-As a result, the TypeScript code shown [here](#how-to-use-this-package) is compiled into the following JavaScript.
+As a result, the TypeScript code shown [here](#how-to-use-keys) is compiled into the following JavaScript.
 
 ```js
 "use strict";
