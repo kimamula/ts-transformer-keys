@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "ttsc"
+  },
+  "devDependencies": {
+    "ts-transformer-keys": "^0.3.1",
+    "ttypescript": "^1.4.6"
+  }
+}

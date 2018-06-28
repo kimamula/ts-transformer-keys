@@ -30,8 +30,81 @@ console.log(keysOfProps); // ['id', 'name', 'age']
 
 ## How to use the custom transformer
 
-Unfortunately, the only way currently available to use custom transformers is to use them with TypeScript compiler API (See https://github.com/Microsoft/TypeScript/issues/14419 for detail).
-Something like the following works.
+Unfortunately, TypeScript itself does not currently provide any easy way to use custom transformers (See https://github.com/Microsoft/TypeScript/issues/14419).
+The followings are the example usage of the custom transformer.
+
+### webpack (with awesome-typescript-loader)
+
+See [examples/webpack](ts-transformer-keys/tree/master/examples/webpack) for detail.
+
+```js
+// webpack.config.js
+const keysTransformer = require('ts-transformer-keys/transformer').default;
+
+module.exports = {
+  // ...
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        loader: 'awesome-typescript-loader',
+        options: {
+          getCustomTransformers: program => ({
+              before: [
+                  keysTransformer(program)
+              ]
+          })
+        }
+      }
+    ]
+  }
+};
+
+```
+
+## Rollup (with rollup-plugin-typescript2)
+
+See [examples/rollup](ts-transformer-keys/tree/master/examples/rollup) for detail.
+
+```js
+// rollup.config.js
+import typescript from 'rollup-plugin-typescript2';
+import keysTransformer from 'ts-transformer-keys/transformer';
+
+export default {
+  // ...
+  plugins: [
+    typescript({ transformers: [service => ({
+      before: [ keysTransformer(service.getProgram()) ],
+      after: []
+    })] })
+  ]
+};
+
+```
+
+## ttypescript
+
+See [examples/ttypescript](ts-transformer-keys/tree/master/examples/ttypescript) for detail.
+See [ttypescript's README](https://github.com/cevek/ttypescript/blob/master/README.md) for how to use this with module bundlers such as webpack of Rollup.
+
+```json
+// tsconfig.json
+{
+  "compilerOptions": {
+    // ...
+    "plugins": [
+      { "transform": "ts-transformer-keys/transformer" }
+    ]
+  },
+  // ...
+}
+```
+
+## TypeScript API
+
+See [test](ts-transformer-keys/tree/master/test) for detail.
+You can try it with `$ npm test`.
 
 ```js
 const ts = require('typescript');
@@ -54,7 +127,7 @@ if (emitSkipped) {
 }
 ```
 
-As a result, the TypeScript code shown above is compiled into the following JavaScript.
+As a result, the TypeScript code shown [here](#how-to-use-this-package) is compiled into the following JavaScript.
 
 ```js
 "use strict";

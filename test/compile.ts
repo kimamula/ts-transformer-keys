@@ -5,6 +5,7 @@ export function compile(filePaths: string[], writeFileCallback?: ts.WriteFileCal
   const program = ts.createProgram(filePaths, {
     strict: true,
     noEmitOnError: true,
+    suppressImplicitAnyIndexErrors: true,
     target: ts.ScriptTarget.ES5
   });
   const transformers: ts.CustomTransformers = {

@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "rollup -c"
+  },
+  "devDependencies": {
+    "rollup": "^0.62.0",
+    "rollup-plugin-typescript2": "^0.15.1",
+    "ts-transformer-keys": "^0.3.1"
+  }
+}

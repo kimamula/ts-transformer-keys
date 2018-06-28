@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noEmitOnError": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "ES5"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
