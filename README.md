@@ -86,7 +86,7 @@ export default {
 ## ttypescript
 
 See [examples/ttypescript](examples/ttypescript) for detail.
-See [ttypescript's README](https://github.com/cevek/ttypescript/blob/master/README.md) for how to use this with module bundlers such as webpack of Rollup.
+See [ttypescript's README](https://github.com/cevek/ttypescript/blob/master/README.md) for how to use this with module bundlers such as webpack or Rollup.
 
 ```json
 // tsconfig.json
