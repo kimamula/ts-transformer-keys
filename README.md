@@ -62,7 +62,7 @@ module.exports = {
 
 ```
 
-## Rollup (with rollup-plugin-typescript2)
+### Rollup (with rollup-plugin-typescript2)
 
 See [examples/rollup](examples/rollup) for detail.
 
@@ -83,7 +83,7 @@ export default {
 
 ```
 
-## ttypescript
+### ttypescript
 
 See [examples/ttypescript](examples/ttypescript) for detail.
 See [ttypescript's README](https://github.com/cevek/ttypescript/blob/master/README.md) for how to use this with module bundlers such as webpack or Rollup.
@@ -101,7 +101,7 @@ See [ttypescript's README](https://github.com/cevek/ttypescript/blob/master/READ
 }
 ```
 
-## TypeScript API
+### TypeScript API
 
 See [test](test) for detail.
 You can try it with `$ npm test`.
