@@ -1,6 +1,6 @@
 {
   "name": "ts-transformer-keys",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Check equality of objects based on their contextual type in TypeScript",
   "main": "index.js",
   "scripts": {
