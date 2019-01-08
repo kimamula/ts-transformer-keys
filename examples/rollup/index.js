@@ -3,7 +3,8 @@
 
   var fooKeys = ["foo"];
   console.log(fooKeys[0]);
-  var fooBarBazKeys = ["bar"];
-  fooBarBazKeys.forEach(function (key) { return console.log(key); });
+  console.log(["foo", "bar"][1]);
+  var fooBarOrBarBazKeys = ["bar"];
+  fooBarOrBarBazKeys.forEach(function (key) { return console.log(key); });
 
 }());

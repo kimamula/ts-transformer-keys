@@ -9,7 +9,7 @@ const fooKeys = keys<Foo>();
 console.log(fooKeys[0]);
 
 type FooBar = Foo & { bar: number; };
-keys<FooBar>()[1];
-type FooBarBaz = FooBar | { bar: Function; baz: Date; };
-const fooBarBazKeys = keys<FooBarBaz>();
-fooBarBazKeys.forEach(key => console.log(key));
+console.log(keys<FooBar>()[1]);
+type FooBarOrBarBaz = FooBar | { bar: Function; baz: Date; };
+const fooBarOrBarBazKeys = keys<FooBarOrBarBaz>();
+fooBarOrBarBazKeys.forEach(key => console.log(key));

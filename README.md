@@ -33,7 +33,7 @@ console.log(keysOfProps); // ['id', 'name', 'age']
 Unfortunately, TypeScript itself does not currently provide any easy way to use custom transformers (See https://github.com/Microsoft/TypeScript/issues/14419).
 The followings are the example usage of the custom transformer.
 
-### webpack (with awesome-typescript-loader)
+### webpack (with ts-loader or awesome-typescript-loader)
 
 See [examples/webpack](examples/webpack) for detail.
 
@@ -47,7 +47,7 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        loader: 'awesome-typescript-loader',
+        loader: 'ts-loader', // or 'awesome-typescript-loader'
         options: {
           getCustomTransformers: program => ({
               before: [

@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ts_transformer_keys_1 = __webpack_require__(/*! ts-transformer-keys */ \"./node_modules/ts-transformer-keys/index.js\");\n[];\nvar fooKeys = [\"foo\"];\nconsole.log(fooKeys[0]);\n[\"foo\", \"bar\"][1];\nvar fooBarBazKeys = [\"bar\"];\nfooBarBazKeys.forEach(function (key) { return console.log(key); });\n\n\n//# sourceURL=webpack:///./index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ts_transformer_keys_1 = __webpack_require__(/*! ts-transformer-keys */ \"./node_modules/ts-transformer-keys/index.js\");\n[];\nvar fooKeys = [\"foo\"];\nconsole.log(fooKeys[0]);\nconsole.log([\"foo\", \"bar\"][1]);\nvar fooBarOrBarBazKeys = [\"bar\"];\nfooBarOrBarBazKeys.forEach(function (key) { return console.log(key); });\n\n\n//# sourceURL=webpack:///./index.ts?");
 
 /***/ }),
 

@@ -1,10 +1,10 @@
 const keysTransformer = require('ts-transformer-keys/transformer').default;
 
-module.exports = {
+module.exports = ['ts-loader', 'awesome-typescript-loader'].map(loader => ({
   mode: 'development',
   entry: './index.ts',
   output: {
-    filename: 'index.js',
+    filename: `${loader}.js`,
     path: __dirname
   },
   resolve: {
@@ -14,7 +14,7 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        loader: 'awesome-typescript-loader',
+        loader,
         options: {
           getCustomTransformers: program => ({
               before: [
@@ -25,4 +25,4 @@ module.exports = {
       }
     ]
   }
-};
+}));
