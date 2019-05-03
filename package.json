@@ -4,7 +4,7 @@
   "description": "A TypeScript custom transformer which enables to obtain keys of given type.",
   "main": "index.js",
   "scripts": {
-    "test": "tsc && node ./test/compileMain.js && mocha ./test/main.js"
+    "test": "tsc && node test/compile && mocha test"
   },
   "repository": {
     "type": "git",

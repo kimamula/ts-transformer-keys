@@ -11,7 +11,7 @@
   "include": [
     "index.ts",
     "transformer.ts",
-    "test/compile.ts"
+    "test/compile/compile.ts"
   ],
   "exclude": [
     "node_modules"

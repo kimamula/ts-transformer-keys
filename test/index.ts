@@ -2,7 +2,7 @@ import { keys } from '../index';
 import * as assert from 'assert';
 import * as path from 'path';
 import * as fs from 'fs';
-import { compile } from './compile';
+import { compile } from './compile/compile';
 
 describe('keys', () => {
   it('return keys of given type', () => {
