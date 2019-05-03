@@ -1,6 +1,6 @@
 {
   "name": "ts-transformer-keys",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "A TypeScript custom transformer which enables to obtain keys of given type.",
   "main": "index.js",
   "scripts": {
