@@ -26,9 +26,9 @@
   ],
   "homepage": "https://github.com/kimamula/ts-transformer-keys#readme",
   "devDependencies": {
-    "@types/mocha": "^5.2.3",
-    "@types/node": "^10.3.5",
-    "mocha": "^5.2.0",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.1",
+    "mocha": "^6.2.0",
     "typescript": "^2.9.2"
   },
   "peerDependencies": {
