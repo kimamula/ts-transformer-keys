@@ -1,4 +1,4 @@
-import { keys } from 'ts-transformer-keys';
+import { keys } from '../..';
 
 keys();
 

@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "../../index.js":
+/*!******************************************************************!*\
+  !*** /Users/kenji_imamura/src/temp/ts-transformer-keys/index.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n\n\n//# sourceURL=webpack:////Users/kenji_imamura/src/temp/ts-transformer-keys/index.js?");
+
+/***/ }),
+
 /***/ "./index.ts":
 /*!******************!*\
   !*** ./index.ts ***!
@@ -94,19 +106,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar ts_transformer_keys_1 = __webpack_require__(/*! ts-transformer-keys */ \"./node_modules/ts-transformer-keys/index.js\");\n[];\nvar fooKeys = [\"foo\"];\nconsole.log(fooKeys[0]);\nconsole.log([\"foo\", \"bar\"][1]);\nvar fooBarOrBarBazKeys = [\"bar\"];\nfooBarOrBarBazKeys.forEach(function (key) { return console.log(key); });\n\n\n//# sourceURL=webpack:///./index.ts?");
-
-/***/ }),
-
-/***/ "./node_modules/ts-transformer-keys/index.js":
-/*!***************************************************!*\
-  !*** ./node_modules/ts-transformer-keys/index.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n\n\n//# sourceURL=webpack:///./node_modules/ts-transformer-keys/index.js?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar __1 = __webpack_require__(/*! ../.. */ \"../../index.js\");\n[];\nvar fooKeys = [\"foo\"];\nconsole.log(fooKeys[0]);\nconsole.log([\"foo\", \"bar\"][1]);\nvar fooBarOrBarBazKeys = [\"bar\"];\nfooBarOrBarBazKeys.forEach(function (key) { return console.log(key); });\n\n\n//# sourceURL=webpack:///./index.ts?");
 
 /***/ })
 

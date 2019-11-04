@@ -1,4 +1,4 @@
-const keysTransformer = require('ts-transformer-keys/transformer').default;
+const keysTransformer = require('../../transformer').default;
 
 module.exports = ['ts-loader', 'awesome-typescript-loader'].map(loader => ({
   mode: 'development',

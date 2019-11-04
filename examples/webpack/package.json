@@ -4,9 +4,8 @@
   },
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.1",
-    "ts-loader": "^6.0.4",
-    "ts-transformer-keys": "^0.3.5",
-    "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6"
+    "ts-loader": "^6.2.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   }
 }
