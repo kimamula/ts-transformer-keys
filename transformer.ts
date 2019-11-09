@@ -24,7 +24,7 @@ function visitNode(node: ts.Node, program: ts.Program): ts.Node {
   return ts.createArrayLiteral(properties.map(property => ts.createLiteral(property.name)));
 }
 
-const indexTs = path.join(__dirname, 'index.ts');
+const indexTs = path.join(__dirname, 'index.d.ts');
 function isKeysCallExpression(node: ts.Node, typeChecker: ts.TypeChecker): node is ts.CallExpression {
   if (!ts.isCallExpression(node)) {
     return false;

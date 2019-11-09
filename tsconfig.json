@@ -9,7 +9,6 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "index.ts",
     "transformer.ts",
     "test/compile/compile.ts"
   ],

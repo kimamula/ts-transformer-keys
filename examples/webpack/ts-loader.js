@@ -87,14 +87,13 @@
 /******/ ({
 
 /***/ "../../index.js":
-/*!******************************************************************!*\
-  !*** /Users/kenji_imamura/src/temp/ts-transformer-keys/index.js ***!
-  \******************************************************************/
+/*!*************************************************************!*\
+  !*** /Users/kenji_imamura/src/ts-transformer-keys/index.js ***!
+  \*************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n\n\n//# sourceURL=webpack:////Users/kenji_imamura/src/temp/ts-transformer-keys/index.js?");
+eval("\n\n//# sourceURL=webpack:////Users/kenji_imamura/src/ts-transformer-keys/index.js?");
 
 /***/ }),
 
