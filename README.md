@@ -68,19 +68,20 @@ See [examples/rollup](examples/rollup) for detail.
 
 ```js
 // rollup.config.js
+import resolve from 'rollup-plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
 import keysTransformer from 'ts-transformer-keys/transformer';
 
 export default {
   // ...
   plugins: [
+    resolve(),
     typescript({ transformers: [service => ({
       before: [ keysTransformer(service.getProgram()) ],
       after: []
     })] })
   ]
 };
-
 ```
 
 ### ttypescript
