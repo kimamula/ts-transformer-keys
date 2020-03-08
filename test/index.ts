@@ -6,7 +6,7 @@ import { compile } from './compile/compile';
 import * as ts from 'typescript';
 
 describe('keys', () => {
-  it('return keys of given type', () => {
+  it('should return keys of given type', () => {
     assert.deepStrictEqual(keys(), []);
     assert.deepStrictEqual(keys<any>(), []);
     interface Foo {
@@ -30,7 +30,7 @@ describe('keys', () => {
   const fileTransformationDir = path.join(__dirname, 'fileTransformation');
   fs.readdirSync(fileTransformationDir).filter((file) => path.extname(file) === '.ts').forEach(file =>
     (['ES5', 'ESNext'] as const).forEach(target =>
-      it(`transforms ${file} as expected when target is ${target}`, async () => {
+      it(`should transform ${file} as expected when target is ${target}`, async () => {
         let result = '';
         const fullFileName = path.join(fileTransformationDir, file), postCompileFullFileName = fullFileName.replace(/\.ts$/, '.js');
         compile([fullFileName], ts.ScriptTarget[target], (fileName, data) => postCompileFullFileName === path.join(fileName) && (result = data));
