@@ -3,8 +3,9 @@
   "version": "0.4.1",
   "description": "A TypeScript custom transformer which enables to obtain keys of given type.",
   "scripts": {
-    "prepack": "npm test",
-    "test": "tsc && node test/compile && mocha test"
+    "prepare": "tsc",
+    "prepublishOnly": "npm test",
+    "test": "node test/compile && mocha test"
   },
   "repository": {
     "type": "git",
