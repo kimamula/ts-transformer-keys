@@ -1,5 +1,5 @@
-import * as ts from 'typescript';
-import * as path from 'path';
+import ts from 'typescript';
+import path from 'path';
 
 export default function transformer(program: ts.Program): ts.TransformerFactory<ts.SourceFile> {
   return (context: ts.TransformationContext) => (file: ts.SourceFile) => visitNodeAndChildren(file, program, context);
@@ -58,7 +58,6 @@ function isKeysCallExpression(node: ts.Node, typeChecker: ts.TypeChecker): node 
   const { declaration } = signature;
   return !!declaration
     && !ts.isJSDocSignature(declaration)
-    && (path.join(declaration.getSourceFile().fileName) === indexTs)
-    && !!declaration.name
-    && declaration.name.getText() === 'keys';
+    && require.resolve(declaration.getSourceFile().fileName) === indexTs
+    && declaration.name?.getText() === 'keys';
 }

@@ -5,7 +5,8 @@
     "strict": true,
     "noEmitOnError": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true
   },
   "include": [
     "transformer.ts",
