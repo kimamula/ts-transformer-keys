@@ -1,4 +1,4 @@
-import * as ts from 'typescript';
+import ts from 'typescript';
 import transformer from '../../transformer';
 
 export function compile(filePaths: string[], target = ts.ScriptTarget.ES5, writeFileCallback?: ts.WriteFileCallback) {
@@ -6,6 +6,7 @@ export function compile(filePaths: string[], target = ts.ScriptTarget.ES5, write
     strict: true,
     noEmitOnError: true,
     suppressImplicitAnyIndexErrors: true,
+    esModuleInterop: true,
     target
   });
   const transformers: ts.CustomTransformers = {

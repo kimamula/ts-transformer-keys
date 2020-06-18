@@ -1,9 +1,9 @@
 import { keys } from '../index';
-import * as assert from 'assert';
-import * as path from 'path';
-import * as fs from 'fs';
+import assert from 'assert';
+import path from 'path';
+import fs from 'fs';
 import { compile } from './compile/compile';
-import * as ts from 'typescript';
+import ts from 'typescript';
 
 describe('keys', () => {
   it('should return keys of given type', () => {
