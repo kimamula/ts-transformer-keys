@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "start": "jest ./TestClass.spec.ts"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.13",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.3.0",
+    "ts-transformer-keys": "^0.4.1",
+    "typescript": "^4.0.2"
+  }
+}
