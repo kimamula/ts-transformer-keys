@@ -1,4 +1,3 @@
-// ts-jest-keys-trasnformer.js
 const keysTransformer = require('ts-transformer-keys/transformer').default;
 const name = 'my-key-transformer';
 const version = 1;
