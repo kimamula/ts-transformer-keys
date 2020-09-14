@@ -105,7 +105,7 @@ See [ttypescript's README](https://github.com/cevek/ttypescript/blob/master/READ
 
 ### ts-jest
 
-See [examples/ts-jest](examples/ttypescript) for details.
+See [examples/ts-jest](examples/ts-jest) for details.
 In order to use this transformer with ts-jest, you need to add a wrapper around it like this:
 
 ```javascript
