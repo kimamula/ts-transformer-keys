@@ -120,12 +120,12 @@ module.exports = { name, version, factory };
 And add it in `jest.config.js` like this:
 
 ```javascript
- globals: {
-        'ts-jest': {
-          // relative path to the ts-jest-keys-transformer.js file
-          astTransformers: ['src/react/ts-jest-keys-transformer.js'],
-        },
-      },
+  globals: {
+    'ts-jest': {
+      // relative path to the ts-jest-keys-transformer.js file
+      astTransformers: ['src/react/ts-jest-keys-transformer.js'],
+    },
+  },
 ```
 
 ### TypeScript API
