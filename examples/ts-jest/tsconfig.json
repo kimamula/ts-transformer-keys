@@ -3,12 +3,7 @@
     "strict": true,
     "noEmitOnError": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "ES5",
-    "plugins": [
-      {
-        "transform": "ts-transformer-keys/transformer"
-      }
-    ]
+    "target": "ES5"
   },
   "files": [
     "index.ts"
