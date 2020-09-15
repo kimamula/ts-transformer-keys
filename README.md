@@ -103,6 +103,31 @@ See [ttypescript's README](https://github.com/cevek/ttypescript/blob/master/READ
 }
 ```
 
+### ts-jest
+
+See [examples/ts-jest](examples/ts-jest) for details.
+In order to use this transformer with ts-jest, you need to add a wrapper around it like this:
+
+```javascript
+// ts-jest-keys-trasnformer.js
+const keysTransformer = require('ts-transformer-keys/transformer').default;
+const name = 'my-key-transformer';
+const version = 1;
+const factory = (cs) => (ctx) => keysTransformer(cs.tsCompiler.program)(ctx);
+module.exports = { name, version, factory };
+```
+
+And add it in `jest.config.js` like this:
+
+```javascript
+  globals: {
+    'ts-jest': {
+      // relative path to the ts-jest-keys-transformer.js file
+      astTransformers: ['src/react/ts-jest-keys-transformer.js'],
+    },
+  },
+```
+
 ### TypeScript API
 
 See [test](test) for detail.
