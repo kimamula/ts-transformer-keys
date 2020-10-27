@@ -4,7 +4,7 @@ module.exports = {
   globals: {
     'ts-jest': {
       // Relative path from the folder where jest.config.js is located
-      astTransformers: ['ts-jest-keys-transformer.js'],
+      astTransformers: { before: ['ts-jest-keys-transformer.js'] },
     },
   }
 };

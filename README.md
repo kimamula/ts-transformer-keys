@@ -123,10 +123,12 @@ And add it in `jest.config.js` like this:
   globals: {
     'ts-jest': {
       // relative path to the ts-jest-keys-transformer.js file
-      astTransformers: ['src/react/ts-jest-keys-transformer.js'],
+      astTransformers: { before: ['src/react/ts-jest-keys-transformer.js'] },
     },
   },
 ```
+
+Note: ts-jest 26.4.2 does not work with this transformer (fixed in ts-jest 26.4.3). Also, for versions smaller than 26.2, you need to provide the transformer in an array instead, like this: `astTransformers: { before: ['src/react/ts-jest-keys-transformer.js'] }`
 
 ### TypeScript API
 
