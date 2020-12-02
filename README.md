@@ -1,7 +1,7 @@
 # ts-transformer-keys
 A TypeScript custom transformer which enables to obtain keys of given type.
 
-[![Build Status][travis-image]][travis-url]
+![Build Status](https://github.com/kimamula/ts-transformer-keys/workflows/test/badge.svg)
 [![NPM version][npm-image]][npm-url]
 [![Downloads](https://img.shields.io/npm/dm/ts-transformer-keys.svg)](https://www.npmjs.com/package/ts-transformer-keys)
 
@@ -183,7 +183,5 @@ class MyClass<T extends object> {
 
 MIT
 
-[travis-image]:https://travis-ci.org/kimamula/ts-transformer-keys.svg?branch=master
-[travis-url]:https://travis-ci.org/kimamula/ts-transformer-keys
 [npm-image]:https://img.shields.io/npm/v/ts-transformer-keys.svg?style=flat
 [npm-url]:https://npmjs.org/package/ts-transformer-keys
