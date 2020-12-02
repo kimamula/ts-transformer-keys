@@ -51,13 +51,17 @@ function isKeysCallExpression(node: ts.Node, typeChecker: ts.TypeChecker): node 
   if (!ts.isCallExpression(node)) {
     return false;
   }
-  const signature = typeChecker.getResolvedSignature(node);
-  if (typeof signature === 'undefined') {
+  const declaration = typeChecker.getResolvedSignature(node)?.declaration;
+  if (!declaration || ts.isJSDocSignature(declaration) || declaration.name?.getText() !== 'keys') {
     return false;
   }
-  const { declaration } = signature;
-  return !!declaration
-    && !ts.isJSDocSignature(declaration)
-    && require.resolve(declaration.getSourceFile().fileName) === indexTs
-    && declaration.name?.getText() === 'keys';
+  try {
+    // require.resolve is required to resolve symlink.
+    // https://github.com/kimamula/ts-transformer-keys/issues/4#issuecomment-643734716
+    return require.resolve(declaration.getSourceFile().fileName) === indexTs;
+  } catch {
+    // declaration.getSourceFile().fileName may not be in Node.js require stack and require.resolve may result in an error.
+    // https://github.com/kimamula/ts-transformer-keys/issues/47
+    return false;
+  }
 }
