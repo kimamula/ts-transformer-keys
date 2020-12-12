@@ -28,17 +28,17 @@ const keysOfProps = keys<Props>();
 console.log(keysOfProps); // ['id', 'name', 'age']
 ```
 
-## How to use `classMembers`
+## How to use `typeMembers`
 
 ```ts
-import { classMembers } from 'ts-transformer-keys';
+import { typeMembers } from 'ts-transformer-keys';
 
 interface Props {
   id: string;
   name: string;
   age: number;
 }
-const membersOfProps = classMembers<Props>();
+const membersOfProps = typeMembers<Props>();
 
 console.log(keysOfProps); // {'id': 'string', 'name': 'string', 'age': 'number'}
 ```

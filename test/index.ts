@@ -1,27 +1,30 @@
-import { keys } from '../index';
+import {typeMembers, keys} from '../index';
 import assert from 'assert';
 import path from 'path';
 import fs from 'fs';
 import { compile } from './compile/compile';
 import ts from 'typescript';
 
+interface Foo {
+  foo: string;
+}
+
+type FooBar = {
+  foo: string;
+  bar?: number;
+};
+
+interface BarBaz {
+  bar: Function;
+  baz: Date;
+}
+
 describe('keys', () => {
   it('should return keys of given type', () => {
     assert.deepStrictEqual(keys(), []);
     assert.deepStrictEqual(keys<any>(), []);
-    interface Foo {
-      foo: string;
-    }
     assert.deepStrictEqual(keys<Foo>(), ['foo']);
-    type FooBar = {
-      foo: string;
-      bar?: number;
-    };
     assert.deepStrictEqual(keys<FooBar>(), ['foo', 'bar']);
-    interface BarBaz {
-      bar: Function;
-      baz: Date;
-    }
     assert.deepStrictEqual(keys<FooBar & BarBaz>(), ['foo', 'bar', 'baz']);
     assert.deepStrictEqual(keys<FooBar | BarBaz>(), ['bar']);
     assert.deepStrictEqual(keys<FooBar & any>(), []);
@@ -38,4 +41,17 @@ describe('keys', () => {
       }).timeout(0)
     )
   );
+});
+
+describe('typeMembers', () => {
+  it('should return type members of given type', () => {
+    assert.deepStrictEqual(typeMembers(), {});
+    assert.deepStrictEqual(typeMembers<any>(), {});
+    assert.deepStrictEqual(typeMembers<Foo>(), {foo: 'string'});
+    assert.deepStrictEqual(typeMembers<FooBar>(), {foo: 'string', bar: 'number | undefined'});
+    assert.deepStrictEqual(typeMembers<FooBar & BarBaz>(), {foo: 'string', bar: 'number & Function', baz: 'Date'});
+    assert.deepStrictEqual(typeMembers<FooBar | BarBaz>(), {bar: 'number | Function | undefined'});
+    assert.deepStrictEqual(typeMembers<FooBar & any>(), {});
+    assert.deepStrictEqual(typeMembers<FooBar | any>(), {});
+  });
 });

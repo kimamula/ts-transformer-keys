@@ -26,17 +26,20 @@ function visitNode(node: ts.Node, program: ts.Program): ts.Node | undefined {
     const properties = typeChecker.getPropertiesOfType(type);
     return ts.createArrayLiteral(properties.map(property => ts.createLiteral(property.name)));
   }
-  else if (isCallExpression(node, typeChecker, 'classMembers')) {
+  else if (isCallExpression(node, typeChecker, 'typeMembers')) {
     if (!node.typeArguments) {
       return ts.createObjectLiteral([]);
     }
     const type = typeChecker.getTypeFromTypeNode(node.typeArguments[0]);
-    return ts.createObjectLiteral(typeChecker.getPropertiesOfType(type).map(property => {
-      return ts.createPropertyAssignment(
-        ts.createIdentifier(property.name),
-        ts.createStringLiteral(typeChecker.typeToString(typeChecker.getTypeOfSymbolAtLocation(property, property.valueDeclaration.parent)))
-      )
-    }));
+    const properties = typeChecker.getPropertiesOfType(type)
+      .filter(property => property.declarations && property.declarations.length > 0)
+      .map(property => {
+        return ts.createPropertyAssignment(
+          ts.createIdentifier(property.name),
+          ts.createStringLiteral(typeChecker.typeToString(typeChecker.getTypeOfSymbolAtLocation(property, property.declarations[0])))
+        )
+      });
+    return ts.createObjectLiteral(properties);
   } else {
     return node;
   }
