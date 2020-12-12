@@ -1,3 +1,2 @@
-interface IDictionary<T> {[key: string]: T;}
 export function keys<T extends object>(): Array<keyof T>;
-export function classMembers<T extends object>(): IDictionary<string>;
+export function classMembers<T extends object>(): { [key in keyof T]: string; };
