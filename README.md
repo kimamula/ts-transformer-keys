@@ -28,6 +28,21 @@ const keysOfProps = keys<Props>();
 console.log(keysOfProps); // ['id', 'name', 'age']
 ```
 
+## How to use `classMembers`
+
+```ts
+import { classMembers } from 'ts-transformer-keys';
+
+interface Props {
+  id: string;
+  name: string;
+  age: number;
+}
+const membersOfProps = classMembers<Props>();
+
+console.log(keysOfProps); // {'id': 'string', 'name': 'string', 'age': 'number'}
+```
+
 ## How to use the custom transformer
 
 Unfortunately, TypeScript itself does not currently provide any easy way to use custom transformers (See https://github.com/Microsoft/TypeScript/issues/14419).
@@ -168,8 +183,8 @@ console.log(keysOfProps); // ['id', 'name', 'age']
 
 # Note
 
-* The `keys` function can only be used as a call expression. Writing something like `keys.toString()` results in a runtime error.
-* `keys` does not work with a dynamic type parameter, i.e., `keys<T>()` in the following code is converted to an empty array(`[]`).
+* The functions can only be used as a call expression. Writing something like `keys.toString()` results in a runtime error.
+* The functions does not work with a dynamic type parameter, i.e., `keys<T>()` in the following code is converted to an empty array(`[]`).
 
 ```ts
 class MyClass<T extends object> {
