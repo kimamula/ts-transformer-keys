@@ -14,3 +14,4 @@ class MyClass {
         return [];
     }
 }
+export {};
