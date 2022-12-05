@@ -1,6 +1,9 @@
 import ts from 'typescript';
 import path from 'path';
 
+const createArrayExpression = ts.factory ? ts.factory.createArrayLiteralExpression : ts.createArrayLiteral;
+const createStringLiteral = ts.factory ? ts.factory.createStringLiteral : ts.createLiteral;
+
 export default function transformer(program: ts.Program): ts.TransformerFactory<ts.SourceFile> {
   return (context: ts.TransformationContext) => (file: ts.SourceFile) => visitNodeAndChildren(file, program, context);
 }
@@ -22,11 +25,11 @@ function visitNode(node: ts.Node, program: ts.Program): ts.Node | undefined {
     return node;
   }
   if (!node.typeArguments) {
-    return ts.createArrayLiteral([]);
+    return createArrayExpression([]);
   }
   const type = typeChecker.getTypeFromTypeNode(node.typeArguments[0]);
   const properties = typeChecker.getPropertiesOfType(type);
-  return ts.createArrayLiteral(properties.map(property => ts.createLiteral(property.name)));
+  return createArrayExpression(properties.map(property => createStringLiteral(property.name)));
 }
 
 const indexJs = path.join(__dirname, 'index.js');
