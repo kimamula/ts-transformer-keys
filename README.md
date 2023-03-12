@@ -6,7 +6,7 @@ A TypeScript custom transformer which enables to obtain keys of given type.
 [![Downloads](https://img.shields.io/npm/dm/ts-transformer-keys.svg)](https://www.npmjs.com/package/ts-transformer-keys)
 
 # Requirement
-TypeScript >= 2.4.1
+TypeScript >= 3.4.1
 
 # How to use this package
 
