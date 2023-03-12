@@ -3,6 +3,9 @@ import path from 'path';
 
 const createArrayExpression = ts.factory ? ts.factory.createArrayLiteralExpression : ts.createArrayLiteral;
 const createStringLiteral = ts.factory ? ts.factory.createStringLiteral : ts.createLiteral;
+const createAsExpression = ts.factory ? ts.factory.createAsExpression : ts.createAsExpression;
+const createIdentifier = ts.factory ? ts.factory.createIdentifier : ts.createIdentifier;
+const createTypeReferenceNode = ts.factory ? ts.factory.createTypeReferenceNode : ts.createTypeReferenceNode;
 
 export default function transformer(program: ts.Program): ts.TransformerFactory<ts.SourceFile> {
   return (context: ts.TransformationContext) => (file: ts.SourceFile) => visitNodeAndChildren(file, program, context);
@@ -29,7 +32,10 @@ function visitNode(node: ts.Node, program: ts.Program): ts.Node | undefined {
   }
   const type = typeChecker.getTypeFromTypeNode(node.typeArguments[0]);
   const properties = typeChecker.getPropertiesOfType(type);
-  return createArrayExpression(properties.map(property => createStringLiteral(property.name)));
+  const array = createArrayExpression(properties.map(property => createStringLiteral(property.name)));
+  return createAsExpression(array, createTypeReferenceNode(
+    createIdentifier("const")
+  ))
 }
 
 const indexJs = path.join(__dirname, 'index.js');
