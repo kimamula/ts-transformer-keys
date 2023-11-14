@@ -1,8 +1,39 @@
 import ts from 'typescript';
 import path from 'path';
 
-const createArrayExpression = ts.factory ? ts.factory.createArrayLiteralExpression : ts.createArrayLiteral;
-const createStringLiteral = ts.factory ? ts.factory.createStringLiteral : ts.createLiteral;
+type ArrayFactory = (
+  elements?: readonly ts.Expression[] | undefined,
+  multiLine?: boolean | undefined
+) => ts.ArrayLiteralExpression;
+
+const createArrayExpression = ((): ArrayFactory => {
+  if (ts.factory) {
+    return ts.factory.createArrayLiteralExpression;
+  }
+
+  if ("createArrayLiteral" in ts) {
+    return ts.createArrayLiteral as ArrayFactory;
+  }
+
+  throw new Error("Cannot choose array literal factory");
+})();
+
+type StringFactory = (
+  text: string,
+  isSingleQuote?: boolean | undefined
+) => ts.StringLiteral;
+
+const createStringLiteral = ((): StringFactory => {
+  if (ts.factory) {
+    return ts.factory.createStringLiteral;
+  }
+
+  if ("createLiteral" in ts) {
+    return ts.createLiteral as StringFactory;
+  }
+
+  throw new Error("Cannot choose string literal factory");
+})();
 
 export default function transformer(program: ts.Program): ts.TransformerFactory<ts.SourceFile> {
   return (context: ts.TransformationContext) => (file: ts.SourceFile) => visitNodeAndChildren(file, program, context);
