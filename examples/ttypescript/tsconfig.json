@@ -2,7 +2,7 @@
   "compilerOptions": {
     "strict": true,
     "noEmitOnError": true,
-    "suppressImplicitAnyIndexErrors": true,
+    "noUncheckedIndexedAccess": false,
     "target": "ES5",
     "plugins": [
       { "transform": "ts-transformer-keys/transformer" }
